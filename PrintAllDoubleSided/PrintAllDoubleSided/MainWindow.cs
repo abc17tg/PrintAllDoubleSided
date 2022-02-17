@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 
 namespace PrintAllDoubleSided
 {
@@ -19,6 +20,8 @@ namespace PrintAllDoubleSided
         {
             printing = new Printing();
             setTextBoxes();
+            setComboBox();
+            Text = "Print All Double Sided";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -53,7 +56,7 @@ namespace PrintAllDoubleSided
             if (numericUpDown1.Value > 0 && numericUpDown2.Value > 0 && numericUpDown1.Value >= numericUpDown2.Value)
                 setTextBoxes();
         }
-        
+
         private void setTextBoxes()
         {
             textBoxesValues = printing.RecalculatePagesSets((int)NumericUpDown1.Value, (int)NumericUpDown2.Value);
@@ -63,23 +66,33 @@ namespace PrintAllDoubleSided
         private void setComboBox()
         {
             comboBox1.Items.Clear();
-            comboBox1.Items.Add(Text = "Next page reversed");
             comboBox1.Items.Add(Text = "Next same orientation");
+            comboBox1.Items.Add(Text = "Next page reversed");
         }
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == 0)
             {
-                pictureBox1.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject("Step 1.png");
-                pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+                pictureBox1.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"\Pictures\Step 1.png");
+                pictureBox2.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"\Pictures\Step 2.png");
+                pictureBox3.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"\Pictures\printer.png");
             }
-            
-
-            pictureBox2.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject("Step 2.png");
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-
-            Image.FromFile(File)
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                pictureBox1.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"\Pictures\Step 1 reverse.png");
+                pictureBox2.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"\Pictures\Step 2 reverse.png");
+                pictureBox3.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"\Pictures\printer.png");
+            }
+            else
+            {
+                pictureBox1.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"\Pictures\printer.png");
+                pictureBox2.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"\Pictures\printer.png");
+                pictureBox3.Image = Image.FromFile(Directory.GetCurrentDirectory() + @"\Pictures\printer.png");
+            }
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
         }
     }
 }

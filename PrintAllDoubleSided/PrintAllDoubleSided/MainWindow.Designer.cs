@@ -92,7 +92,6 @@ namespace PrintAllDoubleSided
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(147, 692);
             this.pictureBox1.Name = "pictureBox1";
@@ -104,7 +103,6 @@ namespace PrintAllDoubleSided
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(530, 692);
             this.pictureBox2.Name = "pictureBox2";
@@ -153,11 +151,11 @@ namespace PrintAllDoubleSided
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(142, 641);
+            this.label4.Location = new System.Drawing.Point(142, 658);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 32);
+            this.label4.Size = new System.Drawing.Size(119, 32);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Step 1";
+            this.label4.Text = "Example";
             // 
             // label5
             // 
@@ -165,17 +163,16 @@ namespace PrintAllDoubleSided
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(525, 641);
+            this.label5.Location = new System.Drawing.Point(525, 658);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 32);
+            this.label5.Size = new System.Drawing.Size(179, 32);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Step 2";
+            this.label5.Text = "After set 1";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(913, 692);
             this.pictureBox3.Name = "pictureBox3";
@@ -189,11 +186,11 @@ namespace PrintAllDoubleSided
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(908, 641);
+            this.label6.Location = new System.Drawing.Point(908, 658);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 32);
+            this.label6.Size = new System.Drawing.Size(89, 32);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Step 3";
+            this.label6.Text = "Print";
             // 
             // label7
             // 
@@ -310,11 +307,12 @@ namespace PrintAllDoubleSided
             // comboBox1
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.comboBox1.DropDownWidth = 412;
             this.comboBox1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(150, 585);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(312, 40);
+            this.comboBox1.Size = new System.Drawing.Size(460, 40);
             this.comboBox1.TabIndex = 7;
             this.comboBox1.Text = "Printing scheme";
             this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
