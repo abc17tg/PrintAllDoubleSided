@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace PrintAllDoubleSided
 {
@@ -58,6 +59,27 @@ namespace PrintAllDoubleSided
             textBoxesValues = printing.RecalculatePagesSets((int)NumericUpDown1.Value, (int)NumericUpDown2.Value);
             textBox1.Text = textBoxesValues[0];
             textBox2.Text = textBoxesValues[1];
+        }
+        private void setComboBox()
+        {
+            comboBox1.Items.Clear();
+            comboBox1.Items.Add(Text = "Next page reversed");
+            comboBox1.Items.Add(Text = "Next same orientation");
+        }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                pictureBox1.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject("Step 1.png");
+                pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            }
+            
+
+            pictureBox2.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject("Step 2.png");
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+
+            Image.FromFile(File)
         }
     }
 }

@@ -113,6 +113,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pictures\printer.png" />
+    <Content Include="Pictures\Step 1 reverse.png" />
+    <Content Include="Pictures\Step 1.png" />
+    <Content Include="Pictures\Step 2 reverse.png" />
+    <Content Include="Pictures\Step 2.png" />
+    <Content Include="Pictures\strips pattern15.png" />
+    <Content Include="Pictures\strips pattern15t.png" />
     <Content Include="printer.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
