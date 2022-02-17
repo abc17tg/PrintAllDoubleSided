@@ -23,9 +23,10 @@ namespace PrintAllDoubleSided
     internal class Printing : MainWindow
     {
         public bool IsMoreUnevenPages;
-        private delegate void TextBoxDelegate(string text);
-        public List<string> RecalculatePagesSets(int numberOfPages, int numberOfPagesPerSheet)
+        public void RecalculatePagesSets()
         {
+            int numberOfPages = (int)NumericUpDown1.Value;
+            int numberOfPagesPerSheet = (int)NumericUpDown2.Value;
             List<int> nOP = new List<int>();
             for (int i = 1; i < numberOfPages + 1; i++)
                 nOP.Add(i);
@@ -60,19 +61,8 @@ namespace PrintAllDoubleSided
             else
                 IsMoreUnevenPages = false;
 
-            return new List<string>{string.Join(",", unevenPages), string.Join(",", evenPages)};
-
-            //mainWindow.Invoke(new Action(()=> { textBox1_ChangeText(string.Join(",", unevenPages)); textBox2_ChangeText(string.Join(",", evenPages)); }));
-            /*mainWindow.BeginInvoke(new TextBoxDelegate(textBox1_ChangeText), string.Join(",", unevenPages));
-            
-            mainWindow.BeginInvoke(new TextBoxDelegate(textBox2_ChangeText), string.Join(",", evenPages));*/
-
-            //if (!mainWindow.IsHandleCreated)
-               // mainWindow.CreateControl();
-            //mainWindow.Invoke((MethodInvoker)delegate () { TextBox1.Text = string.Join(",", unevenPages); TextBox2.Text = string.Join(",", evenPages); });
-
-            /*textBox1_ChangeText(string.Join(",", unevenPages));
-            textBox2_ChangeText(string.Join(",", evenPages));*/
+            TextBox1.Text = string.Join(",", unevenPages);
+            TextBox2.Text = string.Join(",", evenPages);
 
         }
     }
